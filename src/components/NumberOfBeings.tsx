@@ -10,7 +10,8 @@ const NumberOfBeings: React.FC<Props> = ({numberOfBeings, onChangeNumberOfBeings
   return (
     <input
       id='numberOfBeings'
-      type='text'
+      data-testid="numberOfBeings"
+      type='number'
       value={numberOfBeings}
       onChange={(e) => onChangeNumberOfBeings(e.target.value)}
     />

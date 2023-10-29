@@ -19,19 +19,6 @@ const W12MForm = () => {
 	});
 	const [ textArea, setTextArea] = useState<string>("");
 
-
-	function handleNumberOfBeingsInput(event: ChangeEvent<HTMLInputElement>): void {
-		setNumberOfBeings(event.target.value);
-	}
-
-	function handlePlanetNames(event: ChangeEvent<HTMLInputElement>): void {
-		setPlanetsName(event.target.value);
-	}
-
-	function onChangeSpeciesName(event: ChangeEvent<HTMLInputElement>): void {
-		setSpeciesName(event.target.value);
-	}
-
 	function handleSelectedChange(event: ChangeEvent<HTMLSelectElement>): void {
 		setSelectedValue({selectedOption: event.target.value});
 	}

@@ -8,6 +8,7 @@ interface SpeciesNameProps {
 const SpeciesName: React.FC<SpeciesNameProps> = ({speciesName, onChangeSpeciesName}) => {
   return (
     <input id='speciesName'
+    data-testid="speciesName"
     type='text'
     value={speciesName}
     onChange={(e) => onChangeSpeciesName(e.target.value)} />

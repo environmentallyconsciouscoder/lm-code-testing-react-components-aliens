@@ -9,6 +9,7 @@ const PlanetName: React.FC<Props> = ({planetName, onChangePlanetName}: Props) =>
   return (
     <input
       id='planetName'
+      data-testid="planetName"
       type='text'
       value={planetName}
       onChange={(e) => onChangePlanetName(e.target.value)}
