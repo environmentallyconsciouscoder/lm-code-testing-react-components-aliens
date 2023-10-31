@@ -9,8 +9,8 @@ interface SpeciesNameProps {
 
 const SpeciesName: React.FC<SpeciesNameProps> = ({speciesName, onChangeSpeciesName, validate}) => {
 
-  console.log('speciesName', speciesName)
   const errorMessage = validate(speciesName);
+  const isErrorMessageDefined = validate(speciesName) !== undefined ? errorMessage : [];
 
   return (
     <>
@@ -19,8 +19,8 @@ const SpeciesName: React.FC<SpeciesNameProps> = ({speciesName, onChangeSpeciesNa
     type='text'
     value={speciesName}
     onChange={(e) => onChangeSpeciesName(e.target.value)} />
-    { errorMessage.length !== 0 &&
-      <ErrorMessage errorMessage={errorMessage}/>
+    { isErrorMessageDefined.length !== 0 &&
+      <ErrorMessage errorMessage={isErrorMessageDefined}/>
     }
     </>
   );

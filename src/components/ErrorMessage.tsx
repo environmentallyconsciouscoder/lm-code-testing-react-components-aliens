@@ -7,9 +7,9 @@ interface Props {
 const ErrorMessage: React.FC<Props> = ({errorMessage}: Props) => {
   return (
     <div>
-    {errorMessage.map((err) => {
+    {errorMessage.map((err, index) => {
       return (
-      <div>
+      <div key={index}>
         {err}
       </div>
       )
