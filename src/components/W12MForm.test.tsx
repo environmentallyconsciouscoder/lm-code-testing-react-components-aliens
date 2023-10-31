@@ -1,12 +1,20 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import W12MForm from './W12MForm';
+import userEvent from '@testing-library/user-event';
 
-test('renders form element', () => {
-	// we can hold onto the object returned from render()
-	// this object has a container property that we can destructure and inspect
-	// const { container } = render(<W12MForm />);
+test('Given we submit, when the handler function is called, then we pass in the event parameters', async () => {
+	const handleSubmit = jest.fn();
 
-	// // the container is just a normal DOM element, so we can look at normal properties like '.firstChild'
-	// // for example, the firstChild of our container should be our form element
-	// expect(container.firstChild).toHaveClass('w12MForm');
+	render(<W12MForm />);
+
+	const submitButton = screen.getAllByRole('button').find(b => b.textContent === 'Submit');
+
+	if (submitButton) {
+		await userEvent.click(submitButton);
+	}
+
+	submitButton?.addEventListener('click', () => {
+		expect(handleSubmit).toHaveBeenCalledTimes(1);
+	})
+
 });

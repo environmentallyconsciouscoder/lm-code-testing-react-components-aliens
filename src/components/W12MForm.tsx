@@ -29,11 +29,11 @@ const W12MForm = () => {
 
 	function handleSubmit(event: FormEvent): void {
 		event.preventDefault();
-		console.log("numberOfBeings", numberOfBeings);
-		console.log("planetsName", planetsName);
-		console.log("speciesName", speciesName);
-		console.log("selectedValue", selectedValue.selectedOption);
-		console.log("textArea", textArea);
+		// console.log("numberOfBeings", numberOfBeings);
+		// console.log("planetsName", planetsName);
+		// console.log("speciesName", speciesName);
+		// console.log("selectedValue", selectedValue.selectedOption);
+		// console.log("textArea", textArea);
 	}
 
 	return (
