@@ -1,8 +1,9 @@
 import { ChangeEvent, FormEvent, useState } from 'react';
-import W12MHeader from './W12MHeader';
+// import W12MHeader from './W12MHeader';
 import SpeciesName from './SpeciesName';
 import PlanetName from './PlanetName';
 import NumberOfBeings from './NumberOfBeings';
+import validateSpeciesName from './validate/validate_species_name';
 
 interface Selector {
 	selectedOption: string
@@ -39,7 +40,7 @@ const W12MForm = () => {
 	return (
 		<form onSubmit={handleSubmit}>
 			<label>Species Name</label>
-			<SpeciesName speciesName={speciesName} onChangeSpeciesName={(value) => setSpeciesName(value)} />
+			<SpeciesName speciesName={speciesName} onChangeSpeciesName={(value) => setSpeciesName(value)} validate={validateSpeciesName} />
 			<label>Planet Name</label>
 			<PlanetName planetName={planetsName} onChangePlanetName={(value) => setPlanetsName(value)} />
 			<label>Number of beings</label>
