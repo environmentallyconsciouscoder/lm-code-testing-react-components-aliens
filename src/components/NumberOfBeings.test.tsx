@@ -3,7 +3,9 @@ import NumberOfBeings from './NumberOfBeings';
 
 test('Given the props, when the component is rendered, then the state should change', () => {
     const mockOnChangeNumberOfBeings = jest.fn();
-    render(<NumberOfBeings numberOfBeings="" onChangeNumberOfBeings={mockOnChangeNumberOfBeings} />);
+    const mockValidator = jest.fn();
+
+    render(<NumberOfBeings numberOfBeings="" onChangeNumberOfBeings={mockOnChangeNumberOfBeings} validate={mockValidator} />);
 
     const inputElement = screen.getByTestId("numberOfBeings");
     fireEvent.change(inputElement, { target: { value: "40000000" } });
